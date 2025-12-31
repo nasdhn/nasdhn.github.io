@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Dahman Nasim | Développeur Web & Logiciel (Étudiant 42)</title>
+    <meta name="description" content="Portfolio de Dahman Nasim, étudiant à l'école 42. Passionné par le C, C++, Docker et le développement Web. Découvrez mes projets Minishell, Cub3D et plus.">
+    <meta name="author" content="Dahman Nasim">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+
+    <meta property="og:title" content="Portfolio de Dahman Nasim | Développeur 42">
+    <meta property="og:description" content="Découvrez mes projets techniques (C, C++, Docker, Web). À la recherche d'un stage.">
+    <meta property="og:image" content="https://ton-site.com/img/photo.jpg"> <meta property="og:url" content="https://ton-site.com">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">Dahman Nasim<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#contact" class="btn-nav">Me contacter</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Développeur en devenir,<br>passionné par la résolution de problème.</h1>
+            <p class="hero-subtitle">Étudiant à <strong>42</strong>, je conçois des solutions robustes et efficaces. Actuellement à la recherche d'un stage.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                <a href="lien_vers_ton_cv.pdf" target="_blank" class="btn btn-outline">Télécharger mon CV</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">À propos</h2>
+            
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>Passionné par le fonctionnement profond des systèmes informatiques, j'ai rejoint l'école 42 pour repousser mes limites et accroitre mes connaissances dans l'environnement IT.</p>
+                    <p>J'aime résoudre des problèmes complexes, que ce soit en bas niveau (C/C++) ou sur des architectures web. Mon objectif est de rejoindre une équipe technique ambitieuse pour mon stage de fin d'études.</p>
+                    <br>
+                    <a href="#contact" class="link-project">Discutons de votre projet &rarr;</a>
+                </div>
+
+                <div class="about-img-wrapper reveal reveal-delay-1">
+                    <img src="img/photo.jpg" alt="Dahman Nasim" class="about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Mes Projets</h2>
+            
+            <div class="projects-grid">
+                
+                <div class="project-card reveal">
+                    <div class="card-content">
+                        <h3>Minishell</h3>
+                        <p class="tech-stack"><span>C</span><span>Bash</span><span>Unix</span></p>
+                        <p>Recréation d'un shell bash simplifié. Gestion des processus, pipes, redirections et signaux.</p>
+                        <a href="https://github.com/yaoberso/minishell" class="link-project">Voir sur GitHub &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project-card reveal reveal-delay-1">
+                    <div class="card-content">
+                        <h3>Inception</h3>
+                        <p class="tech-stack"><span>Docker</span><span>System Admin</span></p>
+                        <p>Mise en place d'une infrastructure complète (Nginx, WordPress, MariaDB) via Docker Compose.</p>
+                        <a href="https://github.com/nasnoush/Inception" class="link-project">Voir sur GitHub &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project-card reveal reveal-delay-1">
+                    <div class="card-content">
+                        <h3>webserv</h3>
+                        <p class="tech-stack"><span>C++</span><span>HTML / CSS</span></p>
+                        <p>Création d'un serveur web en partant de zéro.</p>
+                        <a href="https://github.com/nasnoush/webserv" class="link-project">Voir sur GitHub &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project-card reveal reveal-delay-2">
+                    <div class="card-content">
+                        <h3>Cub3D</h3>
+                        <p class="tech-stack"><span>C</span><span>Raycasting</span><span>Graphisme</span></p>
+                        <p>Premier moteur graphique en 3D utilisant la technique du Raycasting (type Wolfenstein 3D).</p>
+                        <a href="https://github.com/nasnoush/cub3d" class="link-project">Voir sur GitHub &rarr;</a>
+                    </div>
+                </div>
+
+            </div> 
+
+            <div class="projects-grid" id="more-projects" style="display: none; margin-top: 30px;">
+
+                <div class="project-card reveal">
+                    <div class="card-content">
+                        <h3>CPP Piscine</h3>
+                        <p class="tech-stack"><span>C++</span><span>OOP</span></p>
+                        <p>Série de projets pour maîtriser la Programmation Orientée Objet en C++ (Classes, Héritage, Polymorphisme).</p>
+                        <a href="https://github.com/nasnoush/CPP" class="link-project">Voir sur GitHub &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="card-content">
+                        <h3>NetPractice</h3>
+                        <p class="tech-stack"><span>Réseau</span><span>TCP/IP</span></p>
+                        <p>Exercices pratiques pour comprendre l'adressage IP, les masques de sous-réseau et le routage.</p>
+                        <a href="#" class="link-project">Voir sur GitHub &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <button id="load-more-btn" class="btn btn-outline reveal">Voir plus de projets</button>
+            </div>
+
+        </div> 
+    </section> 
+    
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Compétences</h2>
+            <div class="skills-wrapper">
+                <div class="skill-category reveal">
+                    <h3>Langages</h3>
+                    <ul class="skill-list">
+                        <li>C / C++</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+                <div class="skill-category reveal reveal-delay-1">
+                    <h3>Outils & DevOps</h3>
+                    <ul class="skill-list">
+                        <li>Git / GitHub</li>
+                        <li>Docker</li>
+                        <li>Linux / Shell</li>
+                        <li>VS Code / Vim</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer reveal">
+        <div class="container">
+            <h2>Travaillons ensemble</h2>
+            <p>Disponible pour toutes opportunitées.</p>
+            <a href="mailto:nasim.dahman@outlook.com" class="btn btn-primary">Envoyer un email</a>
+            
+            <div class="social-links">
+                <a href="#">LinkedIn</a>
+                <a href="https://github.com/nasnoush">GitHub</a>
+            </div>
+            <p class="copyright">&copy; 2025 Dahman Nasim</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. GESTION SOURIS (Effet Pression)
+        const body = document.body;
+        document.addEventListener('mousemove', (e) => {
+            body.style.setProperty('--mouse-x', `${e.clientX}px`);
+            body.style.setProperty('--mouse-y', `${e.clientY}px`);
+        });
+
+        // 2. GESTION SCROLL (Apparition fluide)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // 3. GESTION BOUTON VOIR PLUS
+        const btnMore = document.getElementById('load-more-btn');
+        const hiddenProjects = document.getElementById('more-projects');
+
+        btnMore.addEventListener('click', () => {
+            if (hiddenProjects.style.display === 'none') {
+                hiddenProjects.style.display = 'grid';
+                btnMore.textContent = 'Voir moins';
+                hiddenProjects.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+            } else {
+                hiddenProjects.style.display = 'none';
+                btnMore.textContent = 'Voir plus de projets';
+                document.getElementById('projects').scrollIntoView({behavior: 'smooth'});
+            }
+        });
+    </script>
+
+</body>
+</html>

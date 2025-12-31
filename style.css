@@ -1,0 +1,272 @@
+/* =========================================
+   1. VARIABLES & RESET (Style US Tech)
+   ========================================= */
+:root {
+    /* Fond très sombre (Slate 950) pour le contraste */
+    --bg-color: #020617;       
+    
+    /* Couleurs de texte */
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;     
+    
+    /* Accent (Un bleu cyan électrique style "React/Tailwind") */
+    --accent: #38bdf8;         
+    
+    /* Paramètres du Verre (Glassmorphism) */
+    --glass-bg: rgba(255, 255, 255, 0.03); 
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-highlight: rgba(255, 255, 255, 0.15); /* Pour l'effet lumière du haut */
+    --glass-blur: 12px;
+    
+    /* Dimensions */
+    --container-width: 1000px;
+    --spacing-section: 140px; 
+    --nav-height: 80px;
+}
+
+/* AMÉLIORATION 1 : Scroll Padding pour que le menu ne cache pas les titres */
+html { 
+    scroll-behavior: smooth; 
+    scroll-padding-top: var(--nav-height); 
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* AMÉLIORATION 2 : Couleur de sélection du texte (Cyan) */
+::selection {
+    background: var(--accent);
+    color: #020617;
+}
+
+/* AMÉLIORATION 3 : Scrollbar Personnalisée (Dark Mode) */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-color); }
+::-webkit-scrollbar-thumb { 
+    background: #1e293b; 
+    border-radius: 5px; 
+    border: 2px solid var(--bg-color);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    
+    /* --- L'ATMOSPHÈRE (AURORA) --- */
+    background-image: 
+        radial-gradient(circle at 15% 0%, rgba(56, 189, 248, 0.15), transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(124, 58, 237, 0.12), transparent 40%);
+    background-attachment: fixed;
+}
+
+a { text-decoration: none; color: inherit; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+ul { list-style: none; }
+
+/* =========================================
+   2. EFFET SOURIS (PRESSION)
+   ========================================= */
+body::before {
+    content: "";
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    /* Le "trou noir" qui suit la souris */
+    background: radial-gradient(
+        400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+        rgba(2, 6, 23, 0.8), 
+        transparent 100%
+    );
+    z-index: -1; pointer-events: none;
+}
+
+/* Animations d'apparition */
+.reveal {
+    opacity: 0; transform: translateY(30px) scale(0.98);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.active { opacity: 1; transform: translateY(0) scale(1); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+
+/* =========================================
+   3. STRUCTURE & TYPOGRAPHIE
+   ========================================= */
+.container { max-width: var(--container-width); margin: 0 auto; padding: 0 24px; }
+.section { padding: var(--spacing-section) 0; position: relative; }
+
+/* Titres modernes */
+.section-title {
+    font-size: 2.5rem; font-weight: 700; margin-bottom: 60px;
+    letter-spacing: -0.02em;
+    background: linear-gradient(to bottom, #fff, #94a3b8);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Boutons "Glow" */
+.btn {
+    display: inline-block; padding: 14px 32px; border-radius: 99px;
+    font-weight: 600; font-size: 0.95rem; cursor: pointer; 
+    transition: all 0.3s ease; letter-spacing: -0.01em;
+}
+.btn-primary {
+    background-color: var(--text-main); color: var(--bg-color);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+.btn-primary:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+}
+
+.btn-outline {
+    border: 1px solid rgba(255,255,255,0.2); color: var(--text-main);
+    background: transparent;
+}
+.btn-outline:hover { 
+    border-color: var(--text-main); background: rgba(255,255,255,0.05); 
+}
+
+/* =========================================
+   4. NAVBAR FLOTTANTE
+   ========================================= */
+.navbar {
+    height: var(--nav-height); width: 100%; position: fixed; top: 0; z-index: 100;
+    background: rgba(2, 6, 23, 0.7); /* Un peu plus opaque pour la lisibilité */
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.nav-content { height: 100%; display: flex; justify-content: space-between; align-items: center; }
+
+.logo { 
+    font-size: 1.2rem; font-weight: 600; color: var(--text-main); 
+    letter-spacing: -0.03em;
+}
+.logo span { color: var(--accent); }
+
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { 
+    font-size: 0.9rem; font-weight: 500; color: var(--text-muted); 
+    position: relative;
+}
+.nav-links a:hover { color: var(--text-main); }
+.btn-nav {
+    background: rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 6px;
+    color: #fff !important; font-weight: 500; border: 1px solid transparent;
+}
+.btn-nav:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.2); }
+
+/* =========================================
+   5. HERO IMMERSIF
+   ========================================= */
+.hero { min-height: 100vh; display: flex; align-items: center; padding-top: var(--nav-height); }
+.hero-title {
+    font-size: 4.5rem; line-height: 1.1; font-weight: 800; margin-bottom: 24px;
+    letter-spacing: -0.04em;
+    /* Petit effet animé subtil sur le texte */
+    background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 30px rgba(255,255,255,0.05));
+}
+.hero-subtitle {
+    font-size: 1.25rem; color: var(--text-muted); max-width: 580px; margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   6. ABOUT (LAYOUT MODERNE)
+   ========================================= */
+.about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 80px; align-items: center; }
+.about-text p { margin-bottom: 24px; color: var(--text-muted); font-size: 1.1rem; }
+
+.about-img-wrapper {
+    position: relative; border-radius: 24px; overflow: hidden;
+    max-width: 280px; width: 100%; justify-self: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+    transform: rotate(2deg);
+    transition: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.about-img-wrapper:hover { transform: rotate(0deg) scale(1.02); border-color: var(--accent); }
+
+.about-img { width: 100%; display: block; filter: grayscale(100%); transition: 0.5s; }
+.about-img-wrapper:hover .about-img { filter: grayscale(0%); }
+.link-project { 
+    display: inline-flex; align-items: center; color: var(--text-main); 
+    font-weight: 600; font-size: 0.95rem; border-bottom: 1px solid var(--accent); padding-bottom: 2px;
+}
+
+/* =========================================
+   7. PROJETS (GLASS CARDS AVANCÉES)
+   ========================================= */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
+
+.project-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    
+    /* AMÉLIORATION 4 : Éclairage du haut */
+    border: 1px solid var(--glass-border);
+    border-top: 1px solid var(--glass-highlight); /* Lumière sur le bord supérieur */
+    
+    padding: 40px; border-radius: 20px; 
+    display: flex; flex-direction: column; justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    /* Ombre douce pour décoller du fond */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255,255,255,0.2);
+    border-top-color: rgba(255,255,255,0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.card-content h3 { font-size: 1.5rem; margin-bottom: 12px; font-weight: 700; letter-spacing: -0.02em; }
+.tech-stack { margin-bottom: 24px; }
+.tech-stack span {
+    font-size: 0.75rem; font-weight: 600; color: var(--text-main);
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.05);
+    padding: 6px 12px; border-radius: 100px; margin-right: 6px; display: inline-block; margin-bottom: 6px;
+}
+.project-card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 30px; flex-grow: 1; }
+
+/* =========================================
+   8. SKILLS & FOOTER
+   ========================================= */
+.skills-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.skill-category h3 { font-size: 1.25rem; margin-bottom: 20px; color: var(--text-main); }
+
+.skill-list li {
+    background: transparent; border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 16px 0; color: var(--text-muted); font-weight: 500; transition: 0.3s;
+    display: flex; align-items: center;
+}
+.skill-list li::before {
+    content: "→"; margin-right: 10px; color: var(--accent); opacity: 0; transform: translateX(-10px); transition: 0.3s;
+}
+.skill-list li:hover { color: var(--text-main); padding-left: 10px; border-color: rgba(255,255,255,0.2); }
+.skill-list li:hover::before { opacity: 1; transform: translateX(0); }
+
+.footer {
+    text-align: center; padding: 100px 0 40px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 80px;
+}
+.footer h2 { font-size: 2.5rem; letter-spacing: -0.03em; margin-bottom: 20px; }
+.social-links { margin: 40px 0; display: flex; justify-content: center; gap: 40px; }
+.social-links a { font-size: 1.1rem; color: var(--text-muted); transition: 0.3s; }
+.social-links a:hover { color: var(--text-main); transform: scale(1.1); }
+.copyright { opacity: 0.4; font-size: 0.85rem; }
+
+/* =========================================
+   9. MOBILE
+   ========================================= */
+@media (max-width: 768px) {
+    .navbar { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero-title { font-size: 3rem; }
+    .about-grid, .skills-wrapper { grid-template-columns: 1fr; gap: 40px; }
+    .about-img
