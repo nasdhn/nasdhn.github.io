@@ -2,20 +2,20 @@
    1. VARIABLES & RESET (Style US Tech)
    ========================================= */
 :root {
-    /* Fond très sombre (Slate 950) pour le contraste */
+    /* Fond très sombre (Slate 950) */
     --bg-color: #020617;       
     
     /* Couleurs de texte */
     --text-main: #ffffff;
     --text-muted: #94a3b8;     
     
-    /* Accent (Un bleu cyan électrique style "React/Tailwind") */
+    /* Accent (Cyan électrique) */
     --accent: #38bdf8;         
     
     /* Paramètres du Verre (Glassmorphism) */
     --glass-bg: rgba(255, 255, 255, 0.03); 
     --glass-border: rgba(255, 255, 255, 0.08);
-    --glass-highlight: rgba(255, 255, 255, 0.15); /* Pour l'effet lumière du haut */
+    --glass-highlight: rgba(255, 255, 255, 0.15); 
     --glass-blur: 12px;
     
     /* Dimensions */
@@ -24,7 +24,7 @@
     --nav-height: 80px;
 }
 
-/* AMÉLIORATION 1 : Scroll Padding pour que le menu ne cache pas les titres */
+/* Scroll Padding pour que le menu ne cache pas les titres */
 html { 
     scroll-behavior: smooth; 
     scroll-padding-top: var(--nav-height); 
@@ -32,13 +32,13 @@ html {
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* AMÉLIORATION 2 : Couleur de sélection du texte (Cyan) */
+/* Couleur de sélection du texte */
 ::selection {
     background: var(--accent);
     color: #020617;
 }
 
-/* AMÉLIORATION 3 : Scrollbar Personnalisée (Dark Mode) */
+/* Scrollbar Personnalisée */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg-color); }
 ::-webkit-scrollbar-thumb { 
@@ -56,7 +56,7 @@ body {
     overflow-x: hidden;
     position: relative;
     
-    /* --- L'ATMOSPHÈRE (AURORA) --- */
+    /* ATMOSPHÈRE AURORA */
     background-image: 
         radial-gradient(circle at 15% 0%, rgba(56, 189, 248, 0.15), transparent 40%),
         radial-gradient(circle at 85% 30%, rgba(124, 58, 237, 0.12), transparent 40%);
@@ -67,12 +67,11 @@ a { text-decoration: none; color: inherit; transition: all 0.3s cubic-bezier(0.2
 ul { list-style: none; }
 
 /* =========================================
-   2. EFFET SOURIS (PRESSION)
+   2. EFFET SOURIS
    ========================================= */
 body::before {
     content: "";
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    /* Le "trou noir" qui suit la souris */
     background: radial-gradient(
         400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
         rgba(2, 6, 23, 0.8), 
@@ -81,7 +80,7 @@ body::before {
     z-index: -1; pointer-events: none;
 }
 
-/* Animations d'apparition */
+/* Animations */
 .reveal {
     opacity: 0; transform: translateY(30px) scale(0.98);
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -96,7 +95,7 @@ body::before {
 .container { max-width: var(--container-width); margin: 0 auto; padding: 0 24px; }
 .section { padding: var(--spacing-section) 0; position: relative; }
 
-/* Titres modernes */
+/* Titres */
 .section-title {
     font-size: 2.5rem; font-weight: 700; margin-bottom: 60px;
     letter-spacing: -0.02em;
@@ -105,7 +104,7 @@ body::before {
     display: inline-block;
 }
 
-/* Boutons "Glow" */
+/* Boutons */
 .btn {
     display: inline-block; padding: 14px 32px; border-radius: 99px;
     font-weight: 600; font-size: 0.95rem; cursor: pointer; 
@@ -114,6 +113,7 @@ body::before {
 .btn-primary {
     background-color: var(--text-main); color: var(--bg-color);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    border: none;
 }
 .btn-primary:hover { 
     transform: translateY(-2px); 
@@ -129,11 +129,11 @@ body::before {
 }
 
 /* =========================================
-   4. NAVBAR FLOTTANTE
+   4. NAVBAR
    ========================================= */
 .navbar {
     height: var(--nav-height); width: 100%; position: fixed; top: 0; z-index: 100;
-    background: rgba(2, 6, 23, 0.7); /* Un peu plus opaque pour la lisibilité */
+    background: rgba(2, 6, 23, 0.7);
     backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
@@ -158,13 +158,12 @@ body::before {
 .btn-nav:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.2); }
 
 /* =========================================
-   5. HERO IMMERSIF
+   5. HERO
    ========================================= */
 .hero { min-height: 100vh; display: flex; align-items: center; padding-top: var(--nav-height); }
 .hero-title {
     font-size: 4.5rem; line-height: 1.1; font-weight: 800; margin-bottom: 24px;
     letter-spacing: -0.04em;
-    /* Petit effet animé subtil sur le texte */
     background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.7) 100%);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 30px rgba(255,255,255,0.05));
@@ -175,7 +174,7 @@ body::before {
 }
 
 /* =========================================
-   6. ABOUT (LAYOUT MODERNE)
+   6. ABOUT
    ========================================= */
 .about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 80px; align-items: center; }
 .about-text p { margin-bottom: 24px; color: var(--text-muted); font-size: 1.1rem; }
@@ -198,7 +197,7 @@ body::before {
 }
 
 /* =========================================
-   7. PROJETS (GLASS CARDS AVANCÉES)
+   7. PROJETS & SERVICES (GLASS CARDS)
    ========================================= */
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
 
@@ -206,15 +205,13 @@ body::before {
     background: var(--glass-bg);
     backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     
-    /* AMÉLIORATION 4 : Éclairage du haut */
     border: 1px solid var(--glass-border);
-    border-top: 1px solid var(--glass-highlight); /* Lumière sur le bord supérieur */
+    border-top: 1px solid var(--glass-highlight); 
     
     padding: 40px; border-radius: 20px; 
     display: flex; flex-direction: column; justify-content: space-between;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     
-    /* Ombre douce pour décoller du fond */
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
@@ -262,11 +259,61 @@ body::before {
 .copyright { opacity: 0.4; font-size: 0.85rem; }
 
 /* =========================================
-   9. MOBILE
+   9. MODALE & FORMULAIRE (SCROLLABLE)
+   ========================================= */
+.modal {
+    display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(2, 6, 23, 0.8); backdrop-filter: blur(8px);
+    align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;
+}
+.modal.show { display: flex; opacity: 1; }
+
+.modal-content {
+    background: var(--bg-color);
+    border: 1px solid var(--glass-border); border-top: 1px solid var(--glass-highlight);
+    padding: 40px; border-radius: 24px; width: 90%; max-width: 500px; position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    
+    /* MODIF POUR LES ÉCRANS PETITS : Permet de scroller DANS la modale si elle est trop haute */
+    max-height: 90vh; 
+    overflow-y: auto; 
+    
+    transform: translateY(20px); transition: transform 0.3s ease;
+}
+.modal.show .modal-content { transform: translateY(0); }
+
+.close-modal {
+    position: absolute; top: 20px; right: 25px;
+    color: var(--text-muted); font-size: 28px; font-weight: bold; cursor: pointer;
+    transition: 0.2s;
+}
+.close-modal:hover { color: var(--accent); }
+
+.modal h2 { font-size: 1.8rem; margin-bottom: 5px; color: var(--text-main); }
+.modal-subtitle { color: var(--text-muted); margin-bottom: 25px; font-size: 0.9rem; }
+
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-main); font-weight: 500; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 12px 16px; border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border);
+    color: var(--text-main); font-family: 'Inter', sans-serif; transition: 0.3s;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none; border-color: var(--accent); background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+}
+.form-group select option { background-color: #0f172a; color: white; }
+
+/* =========================================
+   10. MOBILE
    ========================================= */
 @media (max-width: 768px) {
     .navbar { padding: 0 20px; }
     .nav-links { display: none; }
     .hero-title { font-size: 3rem; }
     .about-grid, .skills-wrapper { grid-template-columns: 1fr; gap: 40px; }
-    .about-img
+    .about-img-wrapper { order: -1; transform: rotate(0deg); max-width: 260px; }
+    .btn { width: 100%; text-align: center; margin-top: 10px; }
+    .btn-outline { margin-left: 0; }
+}

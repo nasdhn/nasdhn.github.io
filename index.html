@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Dahman Nasim | Développeur Web & Logiciel (Étudiant 42)</title>
-    <meta name="description" content="Portfolio de Dahman Nasim, étudiant à l'école 42. Passionné par le C, C++, Docker et le développement Web. Découvrez mes projets Minishell, Cub3D et plus.">
+    <meta name="description" content="Portfolio de Dahman Nasim, étudiant à l'école 42. Passionné par le C, C++, Docker et le développement Web. Découvrez mes projets et services.">
     <meta name="author" content="Dahman Nasim">
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
 
     <meta property="og:title" content="Portfolio de Dahman Nasim | Développeur 42">
-    <meta property="og:description" content="Découvrez mes projets techniques (C, C++, Docker, Web). À la recherche d'un stage.">
-    <meta property="og:image" content="https://ton-site.com/img/photo.jpg"> <meta property="og:url" content="https://ton-site.com">
+    <meta property="og:description" content="Découvrez mes projets techniques (C, C++, Docker, Web) et mes services.">
+    <meta property="og:image" content="https://ton-site.com/img/photo.jpg">
+    <meta property="og:url" content="https://ton-site.com">
     <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,6 +30,7 @@
                 <li><a href="#about">À propos</a></li>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#skills">Compétences</a></li>
+                <li><a href="#services">Services</a></li> 
                 <li><a href="#contact" class="btn-nav">Me contacter</a></li>
             </ul>
         </div>
@@ -37,10 +39,10 @@
     <header class="hero">
         <div class="container hero-content">
             <h1 class="hero-title">Développeur en devenir,<br>passionné par la résolution de problème.</h1>
-            <p class="hero-subtitle">Étudiant à <strong>42</strong>, je conçois des solutions robustes et efficaces. Actuellement à la recherche d'un stage.</p>
+            <p class="hero-subtitle">Étudiant à <strong>42</strong>, je conçois des solutions robustes et efficaces. Actuellement à la recherche d'un stage ou de missions freelance.</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">Voir mes projets</a>
-                <a href="lien_vers_ton_cv.pdf" target="_blank" class="btn btn-outline">Télécharger mon CV</a>
+                <a href="cv.pdf" target="_blank" class="btn btn-outline">Télécharger mon CV</a>
             </div>
         </div>
     </header>
@@ -52,7 +54,7 @@
             <div class="about-grid">
                 <div class="about-text reveal">
                     <p>Passionné par le fonctionnement profond des systèmes informatiques, j'ai rejoint l'école 42 pour repousser mes limites et accroitre mes connaissances dans l'environnement IT.</p>
-                    <p>J'aime résoudre des problèmes complexes, que ce soit en bas niveau (C/C++) ou sur des architectures web. Mon objectif est de rejoindre une équipe technique ambitieuse pour mon stage de fin d'études.</p>
+                    <p>J'aime résoudre des problèmes complexes, que ce soit en bas niveau (C/C++) ou sur des architectures web. Mon objectif est de rejoindre une équipe technique ambitieuse.</p>
                     <br>
                     <a href="#contact" class="link-project">Discutons de votre projet &rarr;</a>
                 </div>
@@ -108,7 +110,7 @@
 
             </div> 
 
-            <div class="projects-grid" id="more-projects" style="display: none; margin-top: 30px;">
+            <div class="projects-grid" id="more-projects" style="display: none; margin-top: 24px;">
 
                 <div class="project-card reveal">
                     <div class="card-content">
@@ -146,6 +148,8 @@
                     <ul class="skill-list">
                         <li>C / C++</li>
                         <li>Python</li>
+                        <li>JavaScript / TypeScript</li>
+                        <li>SQL</li>
                     </ul>
                 </div>
                 <div class="skill-category reveal reveal-delay-1">
@@ -161,10 +165,91 @@
         </div>
     </section>
 
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Ce que je propose</h2>
+            
+            <div class="projects-grid">
+                
+                <div class="project-card reveal">
+                    <div class="card-content">
+                        <div style="font-size: 2rem; margin-bottom: 15px;">🚀</div>
+                        <h3>Développement Web</h3>
+                        <p>Création de sites vitrines performants ou portfolios sur mesure. Intégration responsive et respect des standards SEO.</p>
+                    </div>
+                </div>
+
+                <div class="project-card reveal reveal-delay-1">
+                    <div class="card-content">
+                        <div style="font-size: 2rem; margin-bottom: 15px;">⚙️</div>
+                        <h3>Back-end & API</h3>
+                        <p>Conception d'architectures (C++, Python). Création d'API, gestion de bases de données et conteneurisation Docker.</p>
+                    </div>
+                </div>
+
+                <div class="project-card reveal reveal-delay-2">
+                    <div class="card-content">
+                        <div style="font-size: 2rem; margin-bottom: 15px;">🔍</div>
+                        <h3>Optimisation</h3>
+                        <p>Refactoring de code existant, amélioration des performances, correction de bugs techniques et scripts d'automatisation.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="reveal" style="text-align: center; margin-top: 60px; color: var(--text-muted);">
+                <p style="margin-bottom: 20px;">Un projet en tête ? Discutons-en.</p>
+                <button id="open-quote-btn" class="btn btn-primary">Obtenir un devis gratuit</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="quote-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Demande de Devis</h2>
+            <p class="modal-subtitle">Cela ouvrira votre application mail.</p>
+            
+            <form id="quote-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Votre Nom</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Téléphone (Facultatif)</label>
+                    <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78">
+                </div>
+
+                <div class="form-group">
+                    <label for="social">Autre contact / LinkedIn (Facultatif)</label>
+                    <input type="text" id="social" name="social" placeholder="@pseudo ou lien">
+                </div>
+                <div class="form-group">
+                    <label for="project-type">Type de Projet</label>
+                    <select id="project-type" name="project-type">
+                        <option value="Site Vitrine / Portfolio">Site Vitrine / Portfolio</option>
+                        <option value="Application Web">Application Web / Logiciel</option>
+                        <option value="Backend / API">API / Backend / Docker</option>
+                        <option value="Optimisation">Optimisation / Debug</option>
+                        <option value="Autre">Autre demande</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Détails du projet</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Décrivez vos besoins..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
     <footer id="contact" class="footer reveal">
         <div class="container">
             <h2>Travaillons ensemble</h2>
-            <p>Disponible pour toutes opportunitées.</p>
+            <p>Disponible pour des opportunités.</p>
             <a href="mailto:nasim.dahman@outlook.com" class="btn btn-primary">Envoyer un email</a>
             
             <div class="social-links">
@@ -176,14 +261,14 @@
     </footer>
 
     <script>
-        // 1. GESTION SOURIS (Effet Pression)
+        // 1. GESTION SOURIS
         const body = document.body;
         document.addEventListener('mousemove', (e) => {
             body.style.setProperty('--mouse-x', `${e.clientX}px`);
             body.style.setProperty('--mouse-y', `${e.clientY}px`);
         });
 
-        // 2. GESTION SCROLL (Apparition fluide)
+        // 2. GESTION SCROLL
         const observerOptions = {
             root: null,
             rootMargin: '0px',
@@ -201,7 +286,7 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // 3. GESTION BOUTON VOIR PLUS
+        // 3. BOUTON VOIR PLUS
         const btnMore = document.getElementById('load-more-btn');
         const hiddenProjects = document.getElementById('more-projects');
 
@@ -215,6 +300,58 @@
                 btnMore.textContent = 'Voir plus de projets';
                 document.getElementById('projects').scrollIntoView({behavior: 'smooth'});
             }
+        });
+
+        // 4. GESTION MODALE & MAILTO (AVEC OPTIONS FACULTATIVES)
+        const modal = document.getElementById("quote-modal");
+        const openBtn = document.getElementById("open-quote-btn");
+        const closeBtn = document.querySelector(".close-modal");
+        const form = document.getElementById("quote-form");
+
+        openBtn.addEventListener("click", () => {
+            modal.classList.add("show");
+            document.body.style.overflow = "hidden";
+        });
+
+        closeBtn.addEventListener("click", () => {
+            modal.classList.remove("show");
+            document.body.style.overflow = "auto";
+        });
+
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("show");
+                document.body.style.overflow = "auto";
+            }
+        });
+
+        // Logique d'envoi Mise à jour
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value; // Nouveau
+            const social = document.getElementById("social").value; // Nouveau
+            const type = document.getElementById("project-type").value;
+            const message = document.getElementById("message").value;
+            
+            // Construction intelligente du corps du mail
+            let bodyText = `Bonjour,\n\nJe suis ${name}.\nJe souhaite obtenir un devis pour un projet de type : ${type}.\n\n`;
+            
+            // Ajout des infos facultatives si elles existent
+            if (phone) bodyText += `Téléphone : ${phone}\n`;
+            if (social) bodyText += `Autre contact : ${social}\n`;
+            
+            bodyText += `\nVoici les détails :\n${message}\n\nCordialement.`;
+            
+            const subject = encodeURIComponent(`Demande de devis - ${type} - ${name}`);
+            const body = encodeURIComponent(bodyText);
+            
+            // Ouverture du client mail
+            window.location.href = `mailto:nasim.dahman@outlook.com?subject=${subject}&body=${body}`;
+            
+            modal.classList.remove("show");
+            document.body.style.overflow = "auto";
         });
     </script>
 
